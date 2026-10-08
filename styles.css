@@ -1,0 +1,1801 @@
+/* ============================================================
+   CSS - الجزء الأول: RESET, BASE, TOP BAR
+   ============================================================ */
+
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+#app {
+  max-width: 480px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 32px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* الألوان */
+:root {
+  --primary: #286654;
+  --primary-dark: #1a4a3a;
+  --blue: #99B7F5;
+  --green: #267F53;
+  --orange: #F5793B;
+  --pink: #F296BD;
+  --gold: #FCCA59;
+  --dark: #1e3c72;
+  --light-bg: #f7f9fc;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px 6px 20px;
+  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.top-bar .title {
+  font-weight: 900;
+  font-size: 18px;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.top-bar .title #appTitle {
+  font-size: 18px;
+}
+
+.top-bar .title #currentLocation {
+  font-size: 10px;
+  color: #ffd700;
+  font-weight: 600;
+  margin-top: -2px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  width: 100%;
+  order: 3;
+}
+
+.top-bar .title .arrow {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+.top-bar .title .arrow.open {
+  transform: rotate(180deg);
+}
+
+.top-bar .stats {
+  display: flex;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.top-bar .stats span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+#batteryIcon {
+  display: inline-block;
+  transform: scaleX(-1);
+  font-size: 20px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+#batteryIcon.empty {
+  filter: drop-shadow(0 0 8px rgba(255,0,0,0.6));
+  animation: batteryBlink 0.8s ease-in-out infinite;
+}
+
+@keyframes batteryBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+#subBtnTop {
+  animation: pulseGold 2s ease-in-out infinite;
+}
+
+@keyframes pulseGold {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 12px rgba(255,215,0,0.8)); }
+}
+/* ============================================================
+   CSS - الجزء الثاني: GRADE DROPDOWN, SUBJECT SCROLL, SCREENS
+   ============================================================ */
+
+/* GRADE DROPDOWN */
+.grade-dropdown {
+  display: none;
+  background: #f0f4ff;
+  border-bottom: 2px solid var(--primary);
+  padding: 8px 16px;
+  flex-wrap: wrap;
+  gap: 6px;
+  z-index: 2;
+}
+
+.grade-dropdown.open {
+  display: flex;
+}
+
+.grade-dropdown .grade-btn {
+  padding: 6px 14px;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  background: white;
+  font-weight: 700;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s;
+  flex: 1;
+  min-width: 60px;
+  text-align: center;
+}
+
+.grade-dropdown .grade-btn.active {
+  border-color: var(--gold);
+  background: #fff8e0;
+  color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(252,202,89,0.3);
+}
+
+/* SUBJECT SCROLL */
+.subject-scroll-wrapper {
+  background: var(--light-bg);
+  border-bottom: 1px solid #eee;
+  padding: 6px 0;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.subject-scroll {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  direction: rtl;
+}
+
+.subject-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.subject-scroll .sub-btn {
+  flex: 0 0 auto;
+  padding: 8px 18px;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  background: white;
+  font-weight: 700;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+  scroll-snap-align: center;
+}
+
+.subject-scroll .sub-btn.active {
+  border-color: var(--primary);
+  background: #e5f8d3;
+  color: var(--primary);
+}
+
+.subject-scroll .sub-btn:active {
+  transform: scale(0.95);
+}
+
+/* SCREENS & MAP */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 70px;
+}
+
+.screen {
+  display: none;
+  padding: 12px 16px 24px;
+  animation: fadeIn 0.3s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chapter-title {
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.chapter-sub {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0 12px;
+  width: 100%;
+  min-height: 300px;
+}
+/* ============================================================
+   CSS - الجزء الثالث: LESSON CIRCLES, CONNECTORS, DIVIDERS
+   ============================================================ */
+
+/* LESSON CIRCLES */
+.lesson-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f0f0f0;
+  border: 4px solid #ddd;
+  color: #888;
+  font-weight: 700;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin: 4px 0;
+  text-align: center;
+  line-height: 1.2;
+  padding: 4px;
+  position: relative;
+  flex-shrink: 0;
+  pointer-events: auto;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.15), 0 6px 12px rgba(0,0,0,0.1);
+  width: 80px;
+  height: 80px;
+}
+
+.lesson-circle .circle-icon { font-size: 22px; }
+.lesson-circle .lesson-name {
+  font-size: 10px;
+  font-weight: 800;
+  max-width: 70px;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lesson-circle .sub { display: none; }
+
+.lesson-circle.locked {
+  background: #e0e0e0;
+  border-color: #ccc;
+  pointer-events: none;
+}
+
+.lesson-circle.locked::after {
+  content: "🔒";
+  font-size: 14px;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.lesson-circle.unlocked {
+  color: white;
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.lesson-circle.unlocked:hover {
+  transform: scale(1.06) translateY(-4px);
+  box-shadow: 0 8px 0 rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.lesson-circle.completed {
+  color: white;
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+}
+
+.lesson-circle.completed::after {
+  content: "✓";
+  font-size: 16px;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: var(--primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* CONNECTORS */
+.zig-right { margin-right: 20px; }
+.zig-left { margin-left: 20px; }
+
+.connector-vertical {
+  width: 3px;
+  height: 14px;
+  background: #ccc;
+  border-radius: 4px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.connector-vertical.done {
+  background: var(--gold);
+}
+
+/* DIVIDERS */
+.unit-divider {
+  margin: 16px 0 12px 0;
+  position: relative;
+  text-align: center;
+}
+
+.unit-divider span {
+  background: var(--light-bg);
+  padding: 0 16px;
+  font-weight: 800;
+  font-size: 16px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-divider {
+  text-align: center;
+  margin: 8px 0 12px 0;
+  position: relative;
+}
+
+.lesson-divider span {
+  background: var(--light-bg);
+  padding: 0 12px;
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+/* ============================================================
+   CSS - الجزء الرابع: LESSON SCREEN, MCQ, MATCH, ESSAY
+   ============================================================ */
+
+/* LESSON SCREEN */
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 0;
+  color: #555;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.progress-in-lesson {
+  background: #d0d0d0;
+  height: 16px;
+  border-radius: 12px;
+  margin: 10px 0 6px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+  border: 1px solid #bbb;
+}
+
+.progress-in-lesson .fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(180deg, #7bff3a, var(--primary));
+  border-radius: 10px;
+  transition: width 0.3s ease;
+  box-shadow: 0 4px 0 #1a4a3a, inset 0 2px 4px rgba(255,255,255,0.4), inset 0 -2px 4px rgba(0,0,0,0.3);
+  border-top: 2px solid rgba(255,255,255,0.6);
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+.question-text {
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+  margin: 6px 0 18px;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.option-btn {
+  background: #f7f7f7;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f1f1f;
+  cursor: pointer;
+  transition: 0.15s;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.option-btn .letter {
+  background: #e0e0e0;
+  color: #555;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.option-btn.correct {
+  border-color: var(--primary);
+  background: #e5f8d3;
+}
+
+.option-btn.correct .letter { background: var(--primary); color: white; }
+.option-btn.wrong {
+  border-color: #ff4b4b;
+  background: #ffd6d6;
+}
+
+.option-btn.wrong .letter { background: #ff4b4b; color: white; }
+.option-btn.disabled { pointer-events: none; opacity: 0.8; }
+
+.action-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 16px;
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: 0.15s;
+  margin-top: 4px;
+  box-shadow: 0 4px 0 #b0b0b0;
+}
+
+.action-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #b0b0b0; }
+.action-btn.primary { background: var(--primary); box-shadow: 0 4px 0 #1a4a3a; }
+.action-btn.secondary { background: var(--orange); box-shadow: 0 4px 0 #c45f2e; }
+
+/* MATCH */
+.match-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 12px 0 20px;
+}
+
+.match-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.match-column .match-header {
+  font-weight: 700;
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 6px;
+  padding: 6px;
+  background: #f0f4ff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.match-item {
+  background: #ffffff;
+  border: 2px solid #d0d0d0;
+  border-radius: 16px;
+  padding: 14px 16px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1f1f1f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 0 #b0b0b0, 0 6px 12px rgba(0,0,0,0.08);
+  transform: translateY(0);
+}
+
+.match-item:active { transform: translateY(2px); box-shadow: 0 2px 0 #b0b0b0; }
+.match-item.selected-left {
+  border-color: #1cb0f6;
+  background: #d4edfc;
+  box-shadow: 0 4px 0 #0f7bb5, 0 6px 12px rgba(28,176,246,0.25);
+  transform: translateY(-2px);
+}
+
+.match-item.selected-right {
+  border-color: #ff9800;
+  background: #fff3e0;
+  box-shadow: 0 4px 0 #e67e00, 0 6px 12px rgba(255,152,0,0.25);
+  transform: translateY(-2px);
+}
+
+.match-item.matched {
+  border-color: var(--primary);
+  background: #e5f8d3;
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.9;
+  box-shadow: 0 4px 0 #1a4a3a, 0 6px 12px rgba(38,127,83,0.2);
+}
+
+.match-item.matched::after { content: " ✓"; color: var(--primary); font-size: 20px; font-weight: 900; }
+.match-item.wrong-match {
+  border-color: #ff4b4b;
+  background: #ffd6d6;
+  animation: shakeMatch 0.4s ease;
+  box-shadow: 0 4px 0 #cc0000;
+}
+
+@keyframes shakeMatch {
+  0%,100% { transform: translateX(0); }
+  15% { transform: translateX(-10px); }
+  30% { transform: translateX(10px); }
+  45% { transform: translateX(-7px); }
+  60% { transform: translateX(7px); }
+}
+
+#matchStatus {
+  text-align: center;
+  margin: 12px 0 8px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #555;
+  padding: 10px;
+  background: #f7f7f7;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+/* ESSAY */
+#essayInput {
+  width: 100%;
+  height: 80px;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  margin-bottom: 12px;
+  resize: vertical;
+}
+
+#essayInput:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(38,127,83,0.2);
+}
+
+.essay-feedback {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: none;
+}
+
+.essay-feedback.show { display: block; }
+.essay-feedback.correct {
+  background: #e5f8d3;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.essay-feedback.wrong {
+  background: #ffd6d6;
+  border: 2px solid #ff4b4b;
+  color: #a00000;
+}
+
+.essay-feedback .model-answer {
+  font-weight: 400;
+  color: #333;
+  margin-top: 4px;
+}
+/* ============================================================
+   CSS - الجزء الخامس: CONFETTI, CHEER, STATS, FRIENDS, PROFILE
+   ============================================================ */
+
+/* CONFETTI & CHEER */
+.confetti-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  font-size: 30px;
+  bottom: -30px;
+  animation: confettiFall 2.2s ease-out forwards;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg) scale(0.4); opacity: 1; }
+  100% { transform: translateY(-110vh) rotate(720deg) scale(1.3); opacity: 0; }
+}
+
+.cheer-bubble {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 20px;
+  padding: 18px 28px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  z-index: 10000;
+  font-size: 26px;
+  font-weight: 800;
+  color: #1f1f1f;
+  text-align: center;
+  animation: bubblePop 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  border: 3px solid var(--primary);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.cheer-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: white;
+}
+
+@keyframes bubblePop {
+  0% { transform: translate(-50%,-50%) scale(0.3); opacity: 0; }
+  80% { transform: translate(-50%,-50%) scale(1.08); opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(1); opacity: 1; }
+}
+
+/* STATS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.stat-card {
+  background: var(--light-bg);
+  border-radius: 14px;
+  padding: 10px 4px;
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+.stat-card .value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1f1f1f;
+}
+
+.stat-card .label {
+  font-size: 10px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.stat-card .icon-big {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.progress-bar-full {
+  background: #e5e5e5;
+  height: 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.progress-bar-full .fill-full {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  border-radius: 20px;
+  transition: width 0.6s;
+}
+
+.badge-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.badge-item {
+  background: #f0f0f0;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  border: 2px solid #ddd;
+}
+
+.badge-item.unlocked {
+  background: #e5f8d3;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* FRIENDS */
+.friend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--light-bg);
+  border-radius: 16px;
+  padding: 12px 16px;
+  margin: 6px 0;
+  border: 1px solid #eee;
+}
+
+.friend-item .friend-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.add-friend-btn {
+  width: 100%;
+  padding: 12px;
+  border: 2px dashed var(--primary);
+  background: transparent;
+  border-radius: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 8px;
+}
+/* ============================================================
+   CSS - الجزء السادس: PROFILE, SETTINGS, BOTTOM NAV, GIFT BOX
+   ============================================================ */
+
+/* PROFILE */
+.profile-card {
+  background: white;
+  border-radius: 24px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  margin-top: 8px;
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #d0f0c0;
+  box-shadow: 0 4px 20px rgba(38, 127, 83, 0.2);
+}
+
+.profile-avatar-btn {
+  position: absolute;
+  bottom: 4px;
+  right: calc(50% - 50px);
+  background: var(--primary);
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: 0.2s;
+}
+
+.profile-avatar-btn:hover { transform: scale(1.1); }
+
+.profile-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1f1f1f;
+  text-align: center;
+}
+
+.profile-username {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 16px;
+}
+
+.profile-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.profile-stat-item {
+  background: var(--light-bg);
+  border-radius: 16px;
+  padding: 12px 4px;
+  text-align: center;
+}
+
+.profile-stat-number {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.profile-stat-label {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.profile-progress {
+  margin-bottom: 16px;
+}
+
+.profile-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.profile-progress-bar {
+  background: #e5e5e5;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profile-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-action-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.profile-action-btn.secondary {
+  background: #f0f0f0;
+  color: #555;
+}
+
+.profile-action-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.profile-action-btn:active { transform: translateY(0); }
+
+/* SETTINGS */
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.setting-item .toggle {
+  background: #ddd;
+  width: 48px;
+  height: 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.setting-item .toggle.active { background: var(--primary); }
+.setting-item .toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.setting-item .toggle.active::after { left: 23px; }
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0 12px;
+  z-index: 100;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+  border-radius: 0 0 32px 32px;
+}
+
+.bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 16px;
+  color: #888;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.bottom-nav .nav-item .icon { font-size: 24px; }
+.bottom-nav .nav-item.active { color: var(--primary); }
+
+/* GIFT BOX */
+.gift-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffd700, #f0b800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5), inset 0 -3px 0 #b8860b;
+  margin: 8px 0;
+  transition: 0.2s;
+  border: 2px solid #ffed4a;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.gift-box:hover { transform: scale(1.12) rotate(-3deg); }
+.gift-box .gift-label {
+  position: absolute;
+  bottom: -18px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #888;
+  background: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.gift-box.locked-gift {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.5);
+  pointer-events: none;
+}
+/* ============================================================
+   CSS - الجزء السابع: SPLASH SCREEN + STREAK CALENDAR + RESPONSIVE
+   ============================================================ */
+
+/* ===== SPLASH SCREEN (شاشة الترحيب) ===== */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #286654;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  z-index: 999999;
+  transition: opacity 0.8s ease;
+  overflow: hidden;
+}
+
+#splash.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* نجوم */
+#splash .star {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.12);
+  font-size: 18px;
+  user-select: none;
+  pointer-events: none;
+}
+
+#splash .star:nth-child(1) { top: 6%; left: 5%; font-size: 26px; }
+#splash .star:nth-child(2) { top: 10%; right: 8%; font-size: 16px; }
+#splash .star:nth-child(3) { top: 20%; left: 18%; font-size: 14px; }
+#splash .star:nth-child(4) { top: 25%; right: 18%; font-size: 20px; }
+#splash .star:nth-child(5) { top: 40%; left: 4%; font-size: 12px; }
+#splash .star:nth-child(6) { top: 45%; right: 4%; font-size: 18px; }
+#splash .star:nth-child(7) { bottom: 30%; left: 10%; font-size: 16px; }
+#splash .star:nth-child(8) { bottom: 25%; right: 12%; font-size: 22px; }
+#splash .star:nth-child(9) { bottom: 12%; left: 22%; font-size: 14px; }
+#splash .star:nth-child(10) { bottom: 8%; right: 6%; font-size: 20px; }
+
+/* كتب */
+#splash .book-icon {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.08);
+  font-size: 38px;
+  user-select: none;
+  pointer-events: none;
+}
+
+#splash .book-icon:nth-child(11) { top: 8%; left: 50%; transform: translateX(-50%); font-size: 56px; opacity: 0.12; }
+#splash .book-icon:nth-child(12) { bottom: 18%; right: 8%; font-size: 32px; transform: rotate(-6deg); }
+#splash .book-icon:nth-child(13) { top: 55%; left: 6%; font-size: 30px; transform: rotate(8deg); }
+#splash .book-icon:nth-child(14) { bottom: 10%; left: 40%; font-size: 28px; transform: rotate(3deg); }
+
+/* النص الرئيسي */
+#splash .brand {
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+#splash .brand h1 {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+#splash .brand p {
+  font-size: 14px;
+  opacity: 0.5;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+/* ===== STREAK CALENDAR (التقويم الشهري) ===== */
+.streak-calendar {
+  background: white;
+  border-radius: 20px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  direction: ltr;
+}
+
+.streak-calendar .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.streak-calendar .header .month-year {
+  font-weight: 800;
+  font-size: 18px;
+  color: #1e3c72;
+}
+
+.streak-calendar .header button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #99B7F5;
+  padding: 0 8px;
+}
+
+.streak-calendar .weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+  font-weight: 700;
+  color: #888;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.streak-calendar .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.streak-calendar .day {
+  padding: 6px 0;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 400;
+  transition: 0.2s;
+  color: #555;
+}
+
+.streak-calendar .day.active {
+  background: #FCCA59;
+  color: #1e3c72;
+  font-weight: 800;
+}
+
+.streak-calendar .day.frozen {
+  background: #99B7F5;
+  color: #1e3c72;
+  font-weight: 700;
+}
+
+.streak-calendar .day.today {
+  border: 2px solid #286654;
+}
+
+.streak-calendar .day.empty {
+  background: transparent;
+  color: transparent;
+  pointer-events: none;
+}
+
+.streak-calendar .footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #888;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.streak-calendar .footer span strong {
+  color: #F5793B;
+}
+
+.streak-calendar .footer .freeze-count strong {
+  color: #99B7F5;
+}
+
+.streak-calendar .footer .shield strong {
+  color: #286654;
+}
+
+/* ===== RESPONSIVE (تحسينات الجوال) ===== */
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 8px 10px 4px 10px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .top-bar .title {
+    font-size: 14px;
+    gap: 4px;
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+
+  .top-bar .title #appTitle {
+    font-size: 14px;
+  }
+
+  .top-bar .title #currentLocation {
+    font-size: 9px;
+    margin-top: 0;
+    width: 100%;
+    text-align: right;
+    order: 3;
+  }
+
+  .top-bar .title .arrow {
+    font-size: 12px;
+  }
+
+  .top-bar .stats {
+    gap: 6px;
+    font-size: 11px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .top-bar .stats span {
+    gap: 2px;
+  }
+
+  #batteryIcon {
+    font-size: 16px;
+  }
+
+  #subBtnTop {
+    font-size: 14px !important;
+    padding: 0 2px !important;
+  }
+
+  .lesson-circle {
+    width: 68px;
+    height: 68px;
+    font-size: 10px;
+  }
+
+  .lesson-circle .lesson-name {
+    font-size: 8px;
+    max-width: 60px;
+  }
+
+  .lesson-circle .circle-icon {
+    font-size: 18px;
+  }
+
+  .zig-right { margin-right: 12px; }
+  .zig-left { margin-left: 12px; }
+  .connector-vertical { height: 10px; }
+
+  .match-item {
+    font-size: 14px;
+    min-height: 50px;
+    padding: 10px 12px;
+  }
+
+  .profile-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
+  }
+
+  .profile-avatar-btn {
+    right: calc(50% - 40px);
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .profile-name {
+    font-size: 18px;
+  }
+
+  .profile-stat-number {
+    font-size: 18px;
+  }
+
+  .unit-divider span {
+    font-size: 13px;
+  }
+
+  .lesson-divider span {
+    font-size: 11px;
+  }
+
+  .streak-calendar .day {
+    font-size: 11px;
+    padding: 4px 0;
+  }
+
+  .streak-calendar .header .month-year {
+    font-size: 15px;
+  }
+
+  .streak-calendar .header button {
+    font-size: 18px;
+  }
+
+  #splash .brand h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+
+  #splash .brand p {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  #splash .star {
+    font-size: 14px !important;
+  }
+
+  #splash .book-icon {
+    font-size: 26px !important;
+  }
+
+  #splash .book-icon:nth-child(11) {
+    font-size: 40px !important;
+  }
+}
+
+/* شاشات صغيرة جداً (360px فأقل) */
+@media (max-width: 360px) {
+  .top-bar .stats {
+    gap: 4px;
+    font-size: 10px;
+  }
+
+  .top-bar .title {
+    font-size: 12px;
+  }
+
+  .top-bar .title #appTitle {
+    font-size: 12px;
+  }
+
+  #batteryIcon {
+    font-size: 14px;
+  }
+
+  .lesson-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 9px;
+  }
+
+  .lesson-circle .lesson-name {
+    font-size: 7px;
+    max-width: 50px;
+  }
+
+  .lesson-circle .circle-icon {
+    font-size: 16px;
+  }
+}
+/* ============================================================
+   الوضع الليلي
+   ============================================================ */
+body.dark-mode {
+    background: #0f1720;
+}
+
+body.dark-mode #app {
+    background: #1a2332;
+    color: #e6e6e6;
+}
+
+/* الشريط العلوي */
+body.dark-mode .top-bar {
+    background: linear-gradient(135deg, #142a22, #0d1f18);
+}
+
+/* قائمة الصفوف */
+body.dark-mode .grade-dropdown {
+    background: #1a2332;
+    border-bottom-color: #2a3a4a;
+}
+
+body.dark-mode .grade-dropdown .grade-btn {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+    color: #ccc;
+}
+
+body.dark-mode .grade-dropdown .grade-btn.active {
+    background: #2a4a3a;
+    color: #7bd88f;
+    border-color: #58cc02;
+}
+
+/* شريط المواد */
+body.dark-mode .subject-scroll-wrapper {
+    background: #1a2332;
+    border-bottom-color: #2a3a4a;
+}
+
+body.dark-mode .subject-scroll .sub-btn {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+    color: #ccc;
+}
+
+body.dark-mode .subject-scroll .sub-btn.active {
+    background: #2a4a3a;
+    color: #7bd88f;
+    border-color: #58cc02;
+}
+
+/* الخريطة والدروس */
+body.dark-mode .chapter-title {
+    color: #e6e6e6;
+}
+
+body.dark-mode .chapter-sub {
+    color: #8899aa;
+}
+
+body.dark-mode .lesson-circle {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+    color: #ccc;
+}
+
+body.dark-mode .lesson-circle.locked {
+    background: #1f2a35;
+    border-color: #2a3a4a;
+}
+
+body.dark-mode .unit-divider span,
+body.dark-mode .lesson-divider span {
+    background: #1a2332;
+}
+
+body.dark-mode .connector-vertical {
+    background: #3a4a5a;
+}
+
+/* شاشة الدرس */
+body.dark-mode .back-btn {
+    color: #ccc;
+}
+
+body.dark-mode .question-text {
+    color: #e6e6e6;
+}
+
+body.dark-mode .option-btn {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+    color: #e6e6e6;
+}
+body.dark-mode .option-btn.correct {
+    background: #1e4a2e !important;
+    border-color: #58cc02 !important;
+    color: #e6e6e6 !important;
+}
+
+body.dark-mode .option-btn.correct .letter {
+    background: #58cc02 !important;
+    color: white !important;
+}
+
+body.dark-mode .option-btn.wrong {
+    background: #4a1e1e !important;
+    border-color: #ff4b4b !important;
+    color: #e6e6e6 !important;
+}
+
+body.dark-mode .option-btn.wrong .letter {
+    background: #ff4b4b !important;
+    color: white !important;
+}
+
+body.dark-mode .option-btn .letter {
+    background: #3a4a5a;
+    color: #ccc;
+}
+
+body.dark-mode #essayInput {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+    color: #e6e6e6;
+}
+
+/* شاشة التقدم */
+body.dark-mode .stat-card {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+}
+
+body.dark-mode .stat-card .value {
+    color: #e6e6e6;
+}
+
+body.dark-mode .stat-card .label {
+    color: #8899aa;
+}
+
+body.dark-mode .badge-item {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+    color: #ccc;
+}
+
+/* التقويم */
+body.dark-mode .streak-calendar {
+    background: #1f2a35;
+}
+
+body.dark-mode .streak-calendar .header .month-year {
+    color: #e6e6e6;
+}
+
+/* الأصدقاء */
+body.dark-mode .friend-item {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+}
+
+body.dark-mode .friend-item span {
+    color: #e6e6e6;
+}
+
+/* الملف الشخصي */
+body.dark-mode .profile-card {
+    background: #1f2a35;
+}
+
+body.dark-mode .profile-name {
+    color: #e6e6e6;
+}
+
+body.dark-mode .profile-stat-item {
+    background: #2a3a4a;
+}
+
+body.dark-mode .profile-stat-number {
+    color: #e6e6e6;
+}
+
+/* الأوسمة */
+body.dark-mode .badge-item {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+    color: #ccc;
+}
+
+/* الاشتراكات */
+body.dark-mode #subscriptionScreen h2 {
+    color: #e6e6e6 !important;
+}
+
+/* الأزرار السفلية */
+body.dark-mode .bottom-nav {
+    background: #1f2a35;
+    border-top-color: #2a3a4a;
+}
+
+body.dark-mode .bottom-nav .nav-item {
+    color: #8899aa;
+}
+
+body.dark-mode .bottom-nav .nav-item.active {
+    color: #58cc02;
+}
+
+/* النوافذ المنبثقة */
+body.dark-mode #batteryPopup > div,
+body.dark-mode #gemsPopup > div,
+body.dark-mode #streakPopup > div,
+body.dark-mode #subPopup > div,
+body.dark-mode #avatarPickerModal > div {
+    background: #1f2a35 !important;
+    color: #e6e6e6;
+}
+/* ============================================================
+   بطاقات الإحصائيات (4 في سطر) + المهام اليومية
+   ============================================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.stat-card {
+  background: var(--light-bg);
+  border-radius: 14px;
+  padding: 10px 4px;
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+.stat-card .value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1f1f1f;
+}
+
+.stat-card .label {
+  font-size: 10px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.stat-card .icon-big {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* الوضع الليلي */
+body.dark-mode .stat-card {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+}
+
+body.dark-mode .stat-card .value {
+    color: #e6e6e6;
+}
+
+body.dark-mode .stat-card .label {
+    color: #8899aa;
+}
+
+body.dark-mode #dailyQuestsBox {
+    background: linear-gradient(135deg, #3a3a1a, #2a2a10);
+    border-color: #FCCA59;
+}
+
+body.dark-mode #dailyQuestsBox h3 {
+    color: #FCCA59;
+}
+/* ============================================================
+   تحسين وضوح الدوائر في الوضع الليلي
+   ============================================================ */
+
+/* في الوضع الليلي، الكتابة على الدوائر تكون داكنة */
+body.dark-mode .lesson-circle.unlocked,
+body.dark-mode .lesson-circle.completed {
+    color: #1a2332 !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .lesson-circle.unlocked .lesson-name,
+body.dark-mode .lesson-circle.completed .lesson-name {
+    color: #1a2332 !important;
+    font-weight: 900;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+body.dark-mode .lesson-circle.unlocked .circle-icon,
+body.dark-mode .lesson-circle.completed .circle-icon {
+    filter: brightness(0.85);
+}
+
+/* الدوائر المقفلة في الوضع الليلي */
+body.dark-mode .lesson-circle.locked {
+    background: #2a3a4a;
+    border-color: #3a4a5a;
+    color: #8899aa;
+}
+
+body.dark-mode .lesson-circle.locked .lesson-name {
+    color: #8899aa !important;
+}
+
+/* الدائرة المكتملة (ذهبية) - الكتابة أخف */
+body.dark-mode .lesson-circle.completed {
+    background: #FCCA59 !important;
+    border-color: #d4a93f !important;
+}
+
+body.dark-mode .lesson-circle.completed .lesson-name {
+    color: #2a2410 !important;
+}
+
+/* الدائرة المفتوحة (خضراء/أزرق/وردي) */
+body.dark-mode .lesson-circle.unlocked {
+    box-shadow: 0 6px 0 rgba(0,0,0,0.5), 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* تحسين أيقونة الدائرة */
+body.dark-mode .lesson-circle .circle-icon {
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
