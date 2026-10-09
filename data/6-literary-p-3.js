@@ -4,4 +4,4 @@ window.DATA_6_LITERARY_3 = {
     math:    { name: 'الرياضيات',         icon: '📐', chapters: [] },
     english: { name: 'اللغة الإنجليزية', icon: '🇬🇧', chapters: [] }
   }
-};سس
+};
