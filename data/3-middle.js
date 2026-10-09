@@ -1,14 +1,9 @@
 window.DATA_3_MIDDLE = {
-  label: 'الثالث المتوسط',
+  label: 'الثالث متوسط',
   subjects: {
-    islamic:     { name: 'التربية الإسلامية', icon: '🕌', chapters: [] },
-    arabic:      { name: 'اللغة العربية',     icon: '📚', chapters: [] },
-    english:     { name: 'اللغة الإنجليزية',  icon: '🇬🇧', chapters: [] },
-    math:        { name: 'الرياضيات',         icon: '📐', chapters: [] },
-    biology:     { name: 'الأحياء',           icon: '🧬', chapters: [] },
-    chemistry:   { name: 'الكيمياء',          icon: '🧪', chapters: [] },
-    physics:     { name: 'الفيزياء',          icon: '⚛️', chapters: [] },
-    social:      { name: 'الاجتماعيات',       icon: '🌍', chapters: [] },
-    computer:    { name: 'الحاسوب',           icon: '💻', chapters: [] }
+    islamic: { name: 'التربية الإسلامية', icon: '🕌', chapters: [] },
+    arabic:  { name: 'اللغة العربية',     icon: '📚', chapters: [] },
+    english: { name: 'اللغة الإنجليزية', icon: '🇬🇧', chapters: [] },
+    math:    { name: 'الرياضيات',         icon: '📐', chapters: [] }
   }
 };
