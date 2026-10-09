@@ -290,6 +290,232 @@ window.DATA_1_MIDDLE_2 = {
     { type: 'match', q: 'Match each English word with its Arabic meaning.\n(صل كل كلمة إنجليزية بمعناها العربي)', pairs: [{ left: 'when', right: 'عندما' }, { left: 'and', right: 'و' }, { left: 'while', right: 'بينما' }] }
   ]
 },
+{
+  id: 19,
+  name: 'Unit One - Lesson 4 (ing Rules)',
+  icon: '✍️',
+  color: '#0D9488',
+  questions: [
+    { type: 'mcq', q: 'What is the correct -ing form of "help"?\n(ما هي صيغة ing الصحيحة للفعل help؟)', options: ['helping', 'helpping', 'helpeing', 'help'], correct: 0 },
+    { type: 'mcq', q: 'What is the correct -ing form of "work"?\n(ما هي صيغة ing الصحيحة للفعل work؟)', options: ['working', 'workking', 'workeing', 'work'], correct: 0 },
+    { type: 'mcq', q: 'What is the correct -ing form of "do"?\n(ما هي صيغة ing الصحيحة للفعل do؟)', options: ['doing', 'doeing', 'dooing', 'do'], correct: 0 },
+    { type: 'mcq', q: 'What is the correct -ing form of "go"?\n(ما هي صيغة ing الصحيحة للفعل go؟)', options: ['going', 'goeing', 'gooing', 'go'], correct: 0 },
+    { type: 'mcq', q: 'What is the correct -ing form of "see"?\n(ما هي صيغة ing الصحيحة للفعل see؟)', options: ['seeing', 'seeeing', 'seing', 'see'], correct: 0 },
+    { type: 'tf', q: 'We add -ing to most verbs without any change.\n(نضيف ing إلى معظم الأفعال بدون أي تغيير)', answer: true },
+    { type: 'tf', q: 'The verb "do" becomes "doeing" when adding -ing.\n(الفعل do يصبح doeing عند إضافة ing)', answer: false },
+    { type: 'match', q: 'Match each verb with its correct -ing form.\n(صل كل فعل بصيغة ing الصحيحة له)', pairs: [{ left: 'help', right: 'helping' }, { left: 'work', right: 'working' }, { left: 'see', right: 'seeing' }] }
+  ]
+},
+  {
+  id: 20,
+  name: 'Unit One - Lesson 4 (ing Rules - Part 2)',
+  icon: '✍️',
+  color: '#14B8A6',
+  questions: [
+    { type: 'mcq', q: 'What is the correct -ing form of "drive"?\n(ما هي صيغة ing الصحيحة للفعل drive؟)', options: ['driveing', 'driving', 'driveng', 'driv'], correct: 1 },
+    { type: 'mcq', q: 'What is the correct -ing form of "write"?\n(ما هي صيغة ing الصحيحة للفعل write؟)', options: ['writeing', 'writing', 'writting', 'writ'], correct: 1 },
+    { type: 'mcq', q: 'What is the correct -ing form of "stay"?\n(ما هي صيغة ing الصحيحة للفعل stay؟)', options: ['staing', 'staying', 'stayeing', 'stay'], correct: 1 },
+    { type: 'mcq', q: 'What is the correct -ing form of "study"?\n(ما هي صيغة ing الصحيحة للفعل study؟)', options: ['studing', 'studying', 'studyeng', 'study'], correct: 1 },
+    { type: 'mcq', q: 'What do we do with verbs ending in "e" when adding -ing?\n(ماذا نفعل بالأفعال التي تنتهي بحرف e عند إضافة ing؟)', options: ['We keep the "e"', 'We delete the "e"', 'We double the "e"', 'We change "e" to "i"'], correct: 1 },
+    { type: 'tf', q: 'We delete the "e" when adding -ing to verbs ending in "e".\n(نحذف حرف e عند إضافة ing للأفعال التي تنتهي بـ e)', answer: true },
+    { type: 'tf', q: 'We change "y" to "i" when adding -ing to verbs ending in "y".\n(نغير y إلى i عند إضافة ing للأفعال التي تنتهي بـ y)', answer: false },
+    { type: 'match', q: 'Match each verb with its correct -ing form.\n(صل كل فعل بصيغة ing الصحيحة له)', pairs: [{ left: 'drive', right: 'driving' }, { left: 'write', right: 'writing' }, { left: 'stay', right: 'staying' }] }
+  ]
+},
+  {
+  id: 21,
+  name: 'Unit One - Lesson 4 (ing Rules - Part 3)',
+  icon: '✍️',
+  color: '#F59E0B',
+  questions: [
+    { type: 'mcq', q: 'What is the -ing form of "swim"?\n(ما هي صيغة ing للفعل swim؟)', options: ['swiming', 'swimming', 'swimeng', 'swim'], correct: 1 },
+    { type: 'mcq', q: 'What is the -ing form of "sit"?\n(ما هي صيغة ing للفعل sit؟)', options: ['siting', 'sitting', 'siteing', 'sit'], correct: 1 },
+    { type: 'mcq', q: 'What is the -ing form of "open"?\n(ما هي صيغة ing للفعل open؟)', options: ['openning', 'opening', 'openeng', 'open'], correct: 1 },
+    { type: 'mcq', q: 'What is the -ing form of "listen"?\n(ما هي صيغة ing للفعل listen؟)', options: ['listening', 'listenning', 'listeneing', 'listen'], correct: 0 },
+    { type: 'mcq', q: 'What is the -ing form of "visit"?\n(ما هي صيغة ing للفعل visit؟)', options: ['visiting', 'visitting', 'visiteing', 'visit'], correct: 0 },
+    { type: 'mcq', q: 'What is the -ing form of "happen"?\n(ما هي صيغة ing للفعل happen؟)', options: ['happening', 'happenning', 'happeneing', 'happen'], correct: 0 },
+    { type: 'tf', q: 'We double the final consonant in "swim" because the stress is on the last syllable.\n(نضاعف الحرف الأخير في swim لأن التشديد على المقطع الأخير)', answer: true },
+    { type: 'tf', q: 'We double the final consonant in "visit" because the stress is on the last syllable.\n(نضاعف الحرف الأخير في visit لأن التشديد على المقطع الأخير)', answer: false },
+    { type: 'match', q: 'Match each verb with its correct -ing form.\n(صل كل فعل بصيغة ing الصحيحة له)', pairs: [{ left: 'swim', right: 'swimming' }, { left: 'sit', right: 'sitting' }, { left: 'open', right: 'opening' }] }
+  ]
+},
+  {
+  id: 22,
+  name: 'Unit One - Lesson 4 (ing Rules - Part 4)',
+  icon: '✍️',
+  color: '#06B6D4',
+  questions: [
+    { type: 'mcq', q: 'What is the -ing form of "sail"?\n(ما هي صيغة ing للفعل sail؟)', options: ['sailing', 'sailling', 'saileing', 'sail'], correct: 0 },
+    { type: 'mcq', q: 'What is the -ing form of "eat"?\n(ما هي صيغة ing للفعل eat؟)', options: ['eating', 'eatting', 'eateing', 'eat'], correct: 0 },
+    { type: 'mcq', q: 'What is the -ing form of "row"?\n(ما هي صيغة ing للفعل row؟)', options: ['rowing', 'rowwing', 'roweing', 'row'], correct: 0 },
+    { type: 'mcq', q: 'What is the -ing form of "box"?\n(ما هي صيغة ing للفعل box؟)', options: ['boxing', 'boxxing', 'boxeing', 'box'], correct: 0 },
+    { type: 'mcq', q: 'Which letters are never doubled before -ing?\n(ما هي الأحرف التي لا تضاعف أبداً قبل ing؟)', options: ['W, X, Y', 'A, E, I', 'B, C, D', 'All letters'], correct: 0 },
+    { type: 'tf', q: 'If a verb ends with two vowels + a consonant, we do not double the consonant.\n(إذا انتهى الفعل بحرفين متحركين + حرف ساكن، لا نضاعف الحرف الساكن)', answer: true },
+    { type: 'tf', q: 'The letters W, X, Y are always doubled before -ing.\n(الأحرف W, X, Y تضاعف دائماً قبل ing)', answer: false },
+    { type: 'match', q: 'Match each verb with its correct -ing form.\n(صل كل فعل بصيغة ing الصحيحة له)', pairs: [{ left: 'sail', right: 'sailing' }, { left: 'eat', right: 'eating' }, { left: 'row', right: 'rowing' }] }
+  ]
+},
+  {
+  id: 23,
+  name: 'Unit One - Activity Book (Past Simple Table)',
+  icon: '📝',
+  color: '#0D9488',
+  questions: [
+    { type: 'mcq', q: 'What is the past simple of "land"?\n(ما هو الماضي البسيط من "land"؟)', options: ['land', 'landed', 'lended', 'landing'], correct: 1 },
+    { type: 'mcq', q: 'What is the past simple of "happen"?\n(ما هو الماضي البسيط من "happen"؟)', options: ['happen', 'happened', 'happend', 'happening'], correct: 1 },
+    { type: 'mcq', q: 'What is the past simple of "come"?\n(ما هو الماضي البسيط من "come"؟)', options: ['come', 'came', 'comed', 'coming'], correct: 1 },
+    { type: 'mcq', q: 'What is the past simple of "fall"?\n(ما هو الماضي البسيط من "fall"؟)', options: ['fall', 'fell', 'falled', 'fallen'], correct: 1 },
+    { type: 'mcq', q: 'What is the past simple of "drive"?\n(ما هو الماضي البسيط من "drive"؟)', options: ['drive', 'drove', 'drived', 'driven'], correct: 1 },
+    { type: 'tf', q: 'The past simple of "stay" is "stayed".\n(الماضي البسيط من "stay" هو "stayed")', answer: true },
+    { type: 'tf', q: 'The past simple of "be" is "been".\n(الماضي البسيط من "be" هو "been")', answer: false },
+    { type: 'match', q: 'Match each infinitive with its past simple.\n(صل كل فعل مجرد بماضيه البسيط)', pairs: [{ left: 'hit', right: 'hit' }, { left: 'jump', right: 'jumped' }, { left: 'pull', right: 'pulled' }] }
+  ]
+},
+  {
+  id: 24,
+  name: 'Unit One - Reading (Richard\'s Story)',
+  icon: '📖',
+  color: '#1E40AF',
+  questions: [
+    { type: 'mcq', q: 'What did Richard want to buy?\n(ماذا أراد ريتشارد أن يشتري؟)', options: ['A sweater', 'A T-shirt', 'A pair of trainers', 'A book'], correct: 0 },
+    { type: 'mcq', q: 'Where did they see a street market?\n(أين رأوا سوقاً في الشارع؟)', options: ['Near the hotel', 'While walking along the street', 'In the shop', 'At the airport'], correct: 1 },
+    { type: 'mcq', q: 'What did Richard buy?\n(ماذا اشترى ريتشارد؟)', options: ['A sweater', 'A pair of trainers and two T-shirts', 'Only a T-shirt', 'Nothing'], correct: 1 },
+    { type: 'mcq', q: 'What did his father buy?\n(ماذا اشترى والده؟)', options: ['A sweater', 'A pair of trainers', 'Nothing', 'Two T-shirts'], correct: 2 },
+    { type: 'mcq', q: 'What was the man selling in the street market?\n(ماذا كان الرجل يبيع في السوق؟)', options: ['Sweaters, T-shirts and trainers', 'Books and pens', 'Food and drinks', 'Toys'], correct: 0 },
+    { type: 'tf', q: 'Richard\'s father bought a sweater.\n(والد ريتشارد اشترى سويتر)', answer: false },
+    { type: 'tf', q: 'While they were walking along the street, they forgot the name of the shop.\n(بينما كانوا يمشون في الشارع، نسوا اسم المتجر)', answer: true },
+    { type: 'match', q: 'Match each English word with its Arabic meaning.\n(صل كل كلمة إنجليزية بمعناها العربي)', pairs: [{ left: 'sweater', right: 'سويتر' }, { left: 'trainers', right: 'حذاء رياضي' }, { left: 'street market', right: 'سوق الشارع' }] }
+  ]
+},
+  {
+  id: 25,
+  name: 'Unit One - Adjectives',
+  icon: '💫',
+  color: '#DB2777',
+  questions: [
+    { type: 'mcq', q: 'Which word means "very bad"?\n(أي كلمة تعني "سيء جداً"؟)', options: ['Fantastic', 'Horrible', 'Delicious', 'Lovely'], correct: 1 },
+    { type: 'mcq', q: 'What does "delicious" mean?\n(ماذا تعني كلمة "delicious"؟)', options: ['لذيذ', 'فظيع', 'رائع', 'ممل'], correct: 0 },
+    { type: 'mcq', q: 'What does "fantastic" mean?\n(ماذا تعني كلمة "fantastic"؟)', options: ['ممل', 'رائع', 'فظيع', 'رهيب'], correct: 1 },
+    { type: 'mcq', q: 'What does "boring" mean?\n(ماذا تعني كلمة "boring"؟)', options: ['ممل', 'رائع', 'لذيذ', 'جميل'], correct: 0 },
+    { type: 'mcq', q: 'Which word means "جميل"?\n(أي كلمة تعني "جميل"؟)', options: ['Horrible', 'Boring', 'Beautiful', 'Terrible'], correct: 2 },
+    { type: 'tf', q: 'The word "delicious" is used to describe food.\n(كلمة "delicious" تستخدم لوصف الطعام)', answer: true },
+    { type: 'tf', q: 'The word "lovely" means "فظيع".\n(كلمة "lovely" تعني "فظيع")', answer: false },
+    { type: 'match', q: 'Match each adjective with its Arabic meaning.\n(صل كل صفة بمعناها العربي)', pairs: [{ left: 'fantastic', right: 'رائع' }, { left: 'horrible', right: 'فظيع' }, { left: 'delicious', right: 'لذيذ' }] }
+  ]
+},
+  {
+  id: 26,
+  name: 'Unit One - Adjectives Practice',
+  icon: '📝',
+  color: '#8B5CF6',
+  questions: [
+    { type: 'mcq', q: 'My brother cooked dinner last night and it was .....\n(أخي طبخ العشاء الليلة الماضية وكان .....)', options: ['delicious', 'horrible', 'boring', 'fantastic'], correct: 0 },
+    { type: 'mcq', q: 'I saw a ..... accident on my way to school.\n(رأيت حادثاً ..... في طريقي إلى المدرسة)', options: ['horrible', 'delicious', 'boring', 'beautiful'], correct: 0 },
+    { type: 'mcq', q: 'The Arabian horse is a ..... animal.\n(الحصان العربي حيوان .....)', options: ['beautiful', 'boring', 'terrible', 'delicious'], correct: 0 },
+    { type: 'mcq', q: 'Jassim doesn\'t like football. He thinks it\'s .....\n(جاسم لا يحب كرة القدم. يعتقد أنها .....)', options: ['boring', 'fantastic', 'lovely', 'horrible'], correct: 0 },
+    { type: 'mcq', q: 'A cheetah can run at more than 110 kilometres an hour. That\'s .....\n(الفهد يمكنه الركض أكثر من 110 كيلومترات في الساعة. هذا .....)', options: ['fantastic', 'boring', 'horrible', 'delicious'], correct: 0 },
+    { type: 'tf', q: 'The word "delicious" is used to describe food.\n(كلمة "delicious" تستخدم لوصف الطعام)', answer: true },
+    { type: 'tf', q: 'The word "boring" means "مثير".\n(كلمة "boring" تعني "مثير")', answer: false },
+    { type: 'match', q: 'Match each adjective with its Arabic meaning.\n(صل كل صفة بمعناها العربي)', pairs: [{ left: 'fantastic', right: 'رائع' }, { left: 'horrible', right: 'فظيع' }, { left: 'delicious', right: 'لذيذ' }] }
+  ]
+},
+  {
+  id: 27,
+  name: 'Unit One - Lesson 4 (Vocabulary)',
+  icon: '📚',
+  color: '#DC2626',
+  questions: [
+    { type: 'mcq', q: 'What does "country" mean?\n(ماذا تعني كلمة "country"؟)', options: ['مدينة', 'بلد', 'قرية', 'منطقة'], correct: 1 },
+    { type: 'mcq', q: 'What does "collect" mean?\n(ماذا تعني كلمة "collect"؟)', options: ['يجمع', 'يفرق', 'يبيع', 'يشتري'], correct: 0 },
+    { type: 'mcq', q: 'What does "enjoy" mean?\n(ماذا تعني كلمة "enjoy"؟)', options: ['يكره', 'يستمع', 'يستمتع', 'يتعب'], correct: 2 },
+    { type: 'mcq', q: 'What does "keep" mean?\n(ماذا تعني كلمة "keep"؟)', options: ['يفقد', 'يحتفظ', 'يرمي', 'يبيع'], correct: 1 },
+    { type: 'mcq', q: 'What does "shape" mean?\n(ماذا تعني كلمة "shape"؟)', options: ['لون', 'حجم', 'شكل', 'وزن'], correct: 2 },
+    { type: 'tf', q: 'The word "stamps" means "طوابع".\n(كلمة "stamps" تعني "طوابع")', answer: true },
+    { type: 'tf', q: 'The word "flowers" means "فواكه".\n(كلمة "flowers" تعني "فواكه")', answer: false },
+    { type: 'match', q: 'Match each English word with its Arabic meaning.\n(صل كل كلمة إنجليزية بمعناها العربي)', pairs: [{ left: 'country', right: 'بلد' }, { left: 'stamps', right: 'طوابع' }, { left: 'flowers', right: 'زهور' }] }
+  ]
+},
+  {
+  id: 28,
+  name: 'Unit One - Possessive Pronouns',
+  icon: '🔑',
+  color: '#7C3AED',
+  questions: [
+    { type: 'mcq', q: 'What is the possessive pronoun for "I"?\n(ما هو ضمير الملكية لـ "I"؟)', options: ['my', 'mine', 'me', 'I'], correct: 1 },
+    { type: 'mcq', q: 'What is the possessive pronoun for "You"?\n(ما هو ضمير الملكية لـ "You"؟)', options: ['your', 'yours', 'you', 'yourself'], correct: 1 },
+    { type: 'mcq', q: 'What is the possessive pronoun for "He"?\n(ما هو ضمير الملكية لـ "He"؟)', options: ['his', 'her', 'him', 'he'], correct: 0 },
+    { type: 'mcq', q: 'What is the possessive pronoun for "She"?\n(ما هو ضمير الملكية لـ "She"؟)', options: ['his', 'hers', 'her', 'she'], correct: 1 },
+    { type: 'mcq', q: 'What is the possessive pronoun for "They"?\n(ما هو ضمير الملكية لـ "They"؟)', options: ['their', 'theirs', 'them', 'they'], correct: 1 },
+    { type: 'tf', q: 'The possessive pronoun for "We" is "ours".\n(ضمير الملكية لـ "We" هو "ours")', answer: true },
+    { type: 'tf', q: 'The possessive pronoun for "It" is "it".\n(ضمير الملكية لـ "It" هو "it")', answer: false },
+    { type: 'match', q: 'Match each subject with its possessive pronoun.\n(صل كل فاعل بضمير الملكية الخاص به)', pairs: [{ left: 'I', right: 'mine' }, { left: 'You', right: 'yours' }, { left: 'She', right: 'hers' }] }
+  ]
+},
+  {
+  id: 29,
+  name: 'Unit One - Possessive Pronouns (Practice)',
+  icon: '✍️',
+  color: '#8B5CF6',
+  questions: [
+    { type: 'mcq', q: 'Complete: The book is ..... (الكتاب لك)\n(أكمل: The book is ..... (الكتاب لك))', options: ['your', 'yours', 'you', 'yourself'], correct: 1 },
+    { type: 'mcq', q: 'Complete: The ball is ..... (الكرة لنا)\n(أكمل: The ball is ..... (الكرة لنا))', options: ['our', 'ours', 'us', 'we'], correct: 1 },
+    { type: 'mcq', q: 'Complete: The watch is ..... (الساعة لها)\n(أكمل: The watch is ..... (الساعة لها))', options: ['her', 'hers', 'she', 'herself'], correct: 1 },
+    { type: 'mcq', q: 'Complete: It\'s ..... (إنها لهم)\n(أكمل: It\'s ..... (إنها لهم))', options: ['their', 'theirs', 'them', 'they'], correct: 1 },
+    { type: 'mcq', q: 'Complete: It\'s ..... (إنها لي)\n(أكمل: It\'s ..... (إنها لي))', options: ['my', 'mine', 'me', 'I'], correct: 1 },
+    { type: 'tf', q: 'We use "yours" to mean "لك".\n(نستخدم "yours" بمعنى "لك")', answer: true },
+    { type: 'tf', q: 'We use "mine" to mean "له".\n(نستخدم "mine" بمعنى "له")', answer: false },
+    { type: 'match', q: 'Match each possessive pronoun with its Arabic meaning.\n(صل كل ضمير ملكية بمعناه العربي)', pairs: [{ left: 'yours', right: 'لك' }, { left: 'ours', right: 'لنا' }, { left: 'theirs', right: 'لهم' }] }
+  ]
+},
+  {
+  id: 30,
+  name: 'Unit One - Possessive Pronouns (Exercise)',
+  icon: '📝',
+  color: '#0EA5E9',
+  questions: [
+    { type: 'mcq', q: 'Sameera lost her watch yesterday. I think this is .....\n(سميرة فقدت ساعتها أمس. أعتقد أن هذه .....)', options: ['hers', 'yours', 'mine', 'theirs'], correct: 0 },
+    { type: 'mcq', q: 'Bilal, I think this book is ..... You left it in my house yesterday.\n(بلال، أعتقد أن هذا الكتاب ..... تركته في بيتي أمس)', options: ['yours', 'mine', 'hers', 'ours'], correct: 0 },
+    { type: 'mcq', q: 'We took that ball to the beach. It\'s ..... but those boys think it\'s .....\n(أخذنا تلك الكرة إلى الشاطئ. إنها ..... لكن أولئك الأولاد يعتقدون أنها .....)', options: ['ours - theirs', 'theirs - ours', 'mine - hers', 'yours - mine'], correct: 0 },
+    { type: 'mcq', q: 'Halla doesn\'t have a radio, so I lent her .....\n(هالة ليس لديها راديو، لذا أعرتها .....)', options: ['mine', 'yours', 'hers', 'theirs'], correct: 0 },
+    { type: 'mcq', q: 'That pen isn\'t ..... I only lent it to you. It\'s ..... and I need it.\n(ذلك القلم ليس ..... أنا فقط أعرته لك. إنه ..... وأحتاجه)', options: ['yours - mine', 'mine - yours', 'hers - ours', 'theirs - yours'], correct: 0 },
+    { type: 'tf', q: 'We use "hers" to refer to something belonging to a female.\n(نستخدم "hers" للإشارة إلى شيء يخص أنثى)', answer: true },
+    { type: 'tf', q: 'The word "ours" is used for something belonging to one person.\n(كلمة "ours" تستخدم لشيء يخص شخصاً واحداً)', answer: false },
+    { type: 'match', q: 'Match each possessive pronoun with its Arabic meaning.\n(صل كل ضمير ملكية بمعناه العربي)', pairs: [{ left: 'mine', right: 'لي' }, { left: 'hers', right: 'لها' }, { left: 'theirs', right: 'لهم' }] }
+  ]
+},
+  {
+  id: 31,
+  name: 'Unit One - Talking About Your Interests',
+  icon: '🎨',
+  color: '#DB2777',
+  questions: [
+    { type: 'mcq', q: 'Which sentence is correct?\n(أي جملة صحيحة؟)', options: ['I like fishing.', 'I like fish.', 'I like to fishing.', 'I like fished.'], correct: 0 },
+    { type: 'mcq', q: 'Which sentence is correct?\n(أي جملة صحيحة؟)', options: ['She enjoy camping.', 'She enjoys camping.', 'She enjoying camping.', 'She enjoys camp.'], correct: 1 },
+    { type: 'mcq', q: 'Which sentence is correct?\n(أي جملة صحيحة؟)', options: ['I am interested in listening to music.', 'I am interested in listen to music.', 'I am interested in listened to music.', 'I interested in music.'], correct: 0 },
+    { type: 'mcq', q: 'Which sentence is correct?\n(أي جملة صحيحة؟)', options: ['Huda loves art.', 'Huda loves arted.', 'Huda love art.', 'Huda loving art.'], correct: 0 },
+    { type: 'mcq', q: 'Which sentence is correct?\n(أي جملة صحيحة؟)', options: ['He loves playing football.', 'He loves play football.', 'He love playing football.', 'He loving football.'], correct: 0 },
+    { type: 'tf', q: 'After "like/love/enjoy" we can use a verb + ing.\n(بعد like/love/enjoy يمكن استخدام فعل + ing)', answer: true },
+    { type: 'tf', q: '"Love" is weaker than "like".\n(كلمة Love أضعف من like)', answer: false },
+    { type: 'match', q: 'Match each English phrase with its Arabic meaning.\n(صل كل عبارة إنجليزية بمعناها العربي)', pairs: [{ left: 'cooking', right: 'الطبخ' }, { left: 'writing stories', right: 'قراءة القصص' }, { left: 'listening to music', right: 'الاستماع للموسيقى' }] }
+  ]
+},
+  {
+  id: 32,
+  name: 'Unit One - Reading (Interests)',
+  icon: '📖',
+  color: '#1E40AF',
+  questions: [
+    { type: 'mcq', q: 'What is the girl in text (a) interested in?\n(ما الذي تهتم به الفتاة في النص a؟)', options: ['football', 'cooking', 'flying', 'music'], correct: 0 },
+    { type: 'mcq', q: 'What does the person in text (b) like doing?\n(ماذا يحب الشخص في النص b أن يفعل؟)', options: ['cooking', 'flying', 'playing football', 'writing stories'], correct: 0 },
+    { type: 'mcq', q: 'What does the girl in text (c) enjoy?\n(ماذا تستمتع به الفتاة في النص c؟)', options: ['flying', 'cooking', 'football', 'swimming'], correct: 0 },
+    { type: 'mcq', q: 'In text (a), when does she have training?\n(في النص a، متى لديها تدريب؟)', options: ['Monday evenings', 'Saturday mornings', 'Sunday evenings', 'Friday afternoons'], correct: 0 },
+    { type: 'mcq', q: 'In text (b), what does he do every week?\n(في النص b، ماذا يفعل كل أسبوع؟)', options: ['make food for all the family', 'go to the gym', 'play football', 'read books'], correct: 0 },
+    { type: 'tf', q: 'The girl in text (a) has a game every Saturday.\n(الفتاة في النص a لديها مباراة كل سبت)', answer: true },
+    { type: 'tf', q: 'The person in text (b) doesn\'t like cooking.\n(الشخص في النص b لا يحب الطبخ)', answer: false },
+    { type: 'match', q: 'Match each person with their interest.\n(صل كل شخص باهتمامه)', pairs: [{ left: 'girl in (a)', right: 'football' }, { left: 'person in (b)', right: 'cooking' }, { left: 'girl in (c)', right: 'flying' }] }
+  ]
+},
+  
     ] },
 
     math:    { name: 'الرياضيات',         icon: '📐', chapters: [] },
