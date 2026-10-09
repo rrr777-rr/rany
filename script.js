@@ -14,16 +14,78 @@ setTimeout(function() {
 // 1. DATA – هيكل الصفوف والمواد
 // ================================================================
 const GRADE_DATA = {
- '6-primary': window.DATA_6_PRIMARY,
- '1-middle': window.DATA_1_MIDDLE,
-  '2-middle': window.DATA_2_MIDDLE,
-  '3-middle': window.DATA_3_MIDDLE,
-  '4-scientific': window.DATA_4_SCIENTIFIC,
-  '4-literary': window.DATA_4_LITERARY,
-  '5-scientific': window.DATA_5_SCIENTIFIC,
-  '5-literary': window.DATA_5_LITERARY,
-  '6-scientific': window.DATA_6_SCIENTIFIC,
-  '6-literary': window.DATA_6_LITERARY,
+  '6-primary': {
+    label: 'السادس الابتدائي',
+    subjects: {
+      ...(window.DATA_6_PRIMARY?.subjects || {}),
+      ...(window.DATA_6_PRIMARY_2?.subjects || {})
+    }
+  },
+  '1-middle': {
+    label: 'الأول متوسط',
+    subjects: {
+      ...(window.DATA_1_MIDDLE?.subjects || {}),
+      ...(window.DATA_1_MIDDLE_2?.subjects || {})
+    }
+  },
+  '2-middle': {
+    label: 'الثاني متوسط',
+    subjects: {
+      ...(window.DATA_2_MIDDLE?.subjects || {}),
+      ...(window.DATA_2_MIDDLE_2?.subjects || {})
+    }
+  },
+  '3-middle': {
+    label: 'الثالث متوسط',
+    subjects: {
+      ...(window.DATA_3_MIDDLE?.subjects || {}),
+      ...(window.DATA_3_MIDDLE_2?.subjects || {})
+    }
+  },
+  '4-literary': {
+    label: 'الرابع الأدبي',
+    subjects: {
+      ...(window.DATA_4_LITERARY?.subjects || {}),
+      ...(window.DATA_4_LITERARY_2?.subjects || {})
+    }
+  },
+  '4-scientific': {
+    label: 'الرابع العلمي',
+    subjects: {
+      ...(window.DATA_4_SCIENTIFIC?.subjects || {}),
+      ...(window.DATA_4_SCIENTIFIC_2?.subjects || {})
+    }
+  },
+  '5-literary': {
+    label: 'الخامس الأدبي',
+    subjects: {
+      ...(window.DATA_5_LITERARY?.subjects || {}),
+      ...(window.DATA_5_LITERARY_2?.subjects || {})
+    }
+  },
+  '5-scientific': {
+    label: 'الخامس العلمي',
+    subjects: {
+      ...(window.DATA_5_SCIENTIFIC?.subjects || {}),
+      ...(window.DATA_5_SCIENTIFIC_2?.subjects || {})
+    }
+  },
+  '6-literary': {
+    label: 'السادس الأدبي',
+    subjects: {
+      ...(window.DATA_6_LITERARY?.subjects || {}),
+      ...(window.DATA_6_LITERARY_2?.subjects || {}),
+      ...(window.DATA_6_LITERARY_3?.subjects || {})
+    }
+  },
+  '6-scientific': {
+    label: 'السادس العلمي',
+    subjects: {
+      ...(window.DATA_6_SCIENTIFIC?.subjects || {}),
+      ...(window.DATA_6_SCIENTIFIC_2?.subjects || {}),
+      ...(window.DATA_6_SCIENTIFIC_3?.subjects || {})
+    }
+  }
 };
 
 // ================================================================
