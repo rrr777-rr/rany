@@ -9556,8 +9556,7 @@ questions: [
   ]
 }
     ] },
-    
-    math: { name: 'الرياضيات', icon: '📐', chapters: [] },
+
     social: { name: 'الاجتماعيات', icon: '🗺️', chapters: [
            {
           id: 1,
