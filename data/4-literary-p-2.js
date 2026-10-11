@@ -5795,7 +5795,7 @@ window.DATA_4_LITERARY_2 = {
     }
   ]
 },
-    ] },
+  ]},
 
     geography: { name: 'الجغرافية',    icon: '🌍', chapters: [] },
 
