@@ -5708,7 +5708,7 @@ window.DATA_4_LITERARY_2 = {
       "modelAnswer": "لعزل جنده من أهل الشام عن الاختلاط بأهالي الكوفة والبصرة والسواد."
     }
   ]
-},
+}
   ]},
 
     geography: { name: 'الجغرافية',    icon: '🌍', chapters: [] },
