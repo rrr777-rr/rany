@@ -5795,9 +5795,10 @@ window.DATA_4_LITERARY_2 = {
     }
   ]
 },
-    
     ] },
+
     geography: { name: 'الجغرافية',    icon: '🌍', chapters: [] },
+    
     sociology: { name: 'علم الاجتماع', icon: '👥', chapters: [
         {
   "id": 1,
