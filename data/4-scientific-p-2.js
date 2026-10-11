@@ -1672,7 +1672,7 @@ window.DATA_4_SCIENTIFIC_2 = {
     { type: 'essay', q: 'علل: الألكانات لا تذوب في الماء؟', modelAnswer: 'لأن جزيئات الألكانات غير قطبية، والماء مذيب قطبي، والقاعدة (المتشابه يذيب المتشابه).' }
   ]
 },
-
+{
 id: 98,
 name: 'تمرين (6-4)',
 icon: '🌡️',
@@ -2125,7 +2125,7 @@ questions: [
     { type: 'match', q: 'صل كل مركب بتصنيفه المناسب.', pairs: [{ left: 'C3H8', right: 'ألكان' }, { left: 'C3H6', right: 'ألكين' }, { left: 'C3H4', right: 'ألكاين' }] }
   ]
 },
-    ] },
+] },
     physics:   { name: 'الفيزياء',  icon: '⚛️', chapters: [] },
     computer:  { name: 'الحاسوب',   icon: '💻', chapters: [] }
   }
